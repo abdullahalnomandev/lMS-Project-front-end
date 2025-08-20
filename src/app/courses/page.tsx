@@ -1,6 +1,11 @@
-import { getCourses } from "@/services/courseService";
 import React from "react";
-import AllCourseCard from "@/components/Course/AllCourse";
+import dynamic from 'next/dynamic';
+import { getCourses } from "@/services/courseService";
+
+const AllCourseCard = dynamic(
+  () => import("@/components/Course/AllCourse"),
+  { ssr: false }
+);
 
 export default async function CourseDetailsPage() {
   try {
