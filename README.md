@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Learning Management System (LMS) Frontend
+
+## Project Overview
+
+This repository contains the frontend application for the Learning Management System (LMS). Built with Next.js, it provides a dynamic and interactive user interface for managing courses, modules, lectures, and user progress. The application is designed to be responsive, user-friendly, and efficient, offering a seamless learning experience.
+
+## Features
+
+- **Course Management**: Create, edit, and delete courses.
+- **Module Organization**: Structure courses into logical modules.
+- **Lecture Delivery**: Deliver educational content through various lecture formats.
+- **User Progress Tracking**: Monitor and track student progress through courses and lectures.
+- **Responsive Design**: Optimized for various devices and screen sizes.
+- **Authentication & Authorization**: Secure access to course content and administrative functions.
+
 ## Getting Started
 
 First, run the development server:
