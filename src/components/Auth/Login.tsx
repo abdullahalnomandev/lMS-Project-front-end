@@ -23,7 +23,9 @@ const formFields = [
 ];
 
 const Login = () => {
-   const searchParams = useSearchParams();
+   const [searchParams] = useState(() => new URLSearchParams(
+     typeof window !== 'undefined' ? window.location.search : ''
+   ));
    const callbackUrl = searchParams.get("callbackUrl");
   const [formData, setFormData] = useState<Record<string, any>>({
     email: "user@gmail.com", // default user email

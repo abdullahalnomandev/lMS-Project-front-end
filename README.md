@@ -4,7 +4,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Project Overview
 
-This repository contains the frontend application for the Learning Management System (LMS). Built with Next.js, it provides a dynamic and interactive user interface for managing courses, modules, lectures, and user progress. The application is designed to be responsive, user-friendly, and efficient, offering a seamless learning experience.
+This repository contains the frontend application for the Learning Management System (LMS). Built with Next.js and TypeScript, it provides a dynamic and interactive user interface for managing courses, modules, lectures, and user progress. The application features:
+
+- **Modern Architecture**: App Router, Server Components, and Client Components
+- **State Management**: React Context API for global state
+- **Styling**: Tailwind CSS for responsive design
+- **API Integration**: RESTful API communication with backend services
+- **Testing**: Jest and React Testing Library for unit tests
+
+The application is designed to be responsive, user-friendly, and efficient, offering a seamless learning experience across all devices.
 
 ## Features
 
@@ -17,7 +25,23 @@ This repository contains the frontend application for the Learning Management Sy
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js v18+
+- npm v9+ or equivalent package manager
+
+### Installation
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### Running the Development Server
 
 ```bash
 npm run dev
@@ -25,8 +49,12 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
+```
+
+### Environment Variables
+Create a `.env.local` file with:
+```
+NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
