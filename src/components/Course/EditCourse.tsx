@@ -52,8 +52,6 @@ export default function EditCourse({ course }: { course: Course }) {
     course?.thumbnail || null
   );
 
-  console.log({ course });
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -177,7 +175,6 @@ export default function EditCourse({ course }: { course: Course }) {
       };
 
       const updatedCourse = await updateCourse(course._id, courseData);
-      console.log("Updated course:", courseData);
       if (updatedCourse) {
         toast("Successfully updated!", {
           closeButton: false,

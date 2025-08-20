@@ -126,7 +126,6 @@ export default function EditLecture() {
         video_url: formData.video_url,
         pdf_nodes: uploadedUrls,
       });
-      console.log("Lecture ready to submit:", lectureData);
 
       if (data) {
         router.push(`/admin/course/${course_id}/module/edit/${module_id}`);

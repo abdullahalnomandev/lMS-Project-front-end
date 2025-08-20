@@ -9,8 +9,6 @@ export default async function CourseDetailsPage({ params }: { params: { id: stri
     const courseDetails = await getCourseById(id);
     const modules = await getModules(id);
 
-    console.log(courseDetails)
-
   return (
     <CourseDetails courseDetails={courseDetails} modules={modules}/>
   );

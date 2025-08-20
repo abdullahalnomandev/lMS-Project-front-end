@@ -50,8 +50,6 @@ const userMenuItems =  [
   const pathname = usePathname();
   if (pathname.includes("admin") || pathname.includes("user")) return null;
 
-  console.log({ userInfo });
-
   return (
     <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="w-full">
