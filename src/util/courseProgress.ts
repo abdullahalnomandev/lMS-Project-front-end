@@ -3,7 +3,6 @@ import { getLecturesAccess, postLectureProgress as postLectureProgressAPI } from
 export const hasAccessToLecture = async (lectureId: string): Promise<boolean> => {
   try {
     const isComplete = await getLecturesAccess(lectureId);
-    console.log({ lectureId, isComplete });
     return isComplete;
   } catch (error) {
     console.error(`Error checking completion status for lecture ${lectureId}:`, error);
@@ -14,7 +13,6 @@ export const hasAccessToLecture = async (lectureId: string): Promise<boolean> =>
 export const postLectureProgress = async (lectureId: string): Promise<void> => {
   try {
     await postLectureProgressAPI(lectureId);
-    console.log(`Successfully marked lecture ${lectureId} as completed`);
   } catch (error) {
     console.error(`Error marking lecture ${lectureId} as completed:`, error);
     throw error;

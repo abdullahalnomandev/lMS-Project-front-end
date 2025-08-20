@@ -3,7 +3,6 @@
 import { useState } from "react";
 import FormHeader from "../UI/FormHeader";
 import { loginUser } from "@/services/auth.Service";
-import { useSearchParams } from "next/navigation";
 
 const formFields = [
   {
@@ -58,8 +57,6 @@ const Login = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  console.log({callbackUrl})
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

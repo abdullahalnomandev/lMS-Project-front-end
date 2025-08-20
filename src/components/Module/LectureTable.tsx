@@ -117,8 +117,6 @@ const fetchLectures = useCallback(async () => {
           // Fetch modules for selected course
           moduleData = await getModules(filters.courseId);
         }
-        console.log({ moduleData });
-
         setModules(moduleData || []);
 
         // Reset module if current module not in new list
