@@ -1,18 +1,12 @@
 import React from "react";
-import dynamic from 'next/dynamic';
 import { getCourses } from "@/services/courseService";
-
-const AllCourseCard = dynamic(
-  () => import("@/components/Course/AllCourse"),
-  { ssr: false }
-);
+import AllCourseCardWrapper from "@/components/Course/AllCourseCardWrapper";
 
 export default async function CourseDetailsPage() {
   try {
     const courses = await getCourses();
-    return <AllCourseCard courses={courses} />;
+    return <AllCourseCardWrapper courses={courses} />;
   } catch (error) {
-    // Handle the 404 error gracefully
     console.error("Error fetching courses:", error);
     return (
       <div className="flex items-center justify-center min-h-screen">
