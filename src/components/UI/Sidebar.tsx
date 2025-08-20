@@ -2,19 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { getSidebarItems } from "@/constants/sidebarItems";
 import { USER_ROLE } from "@/constants/role";
+import { logOutUser } from "@/util/log-out-user";
 
 export default function Sidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const handleLogout = () => {
-    console.log("Logging out...");
-    // Add your logout logic here
+    logOutUser(router)
   };
 
   const toggleSidebar = () => setIsOpen(!isOpen);

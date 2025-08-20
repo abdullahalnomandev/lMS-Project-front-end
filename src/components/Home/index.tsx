@@ -60,8 +60,6 @@ export default function Home() {
     { number: "95%", label: "Success Rate" },
   ];
 
-  console.log({ userInfo });
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

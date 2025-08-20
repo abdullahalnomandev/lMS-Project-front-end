@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { createCourse } from "@/services/courseService";
@@ -168,24 +167,6 @@ export default function CreateCourse() {
           ariaLabel: "Course deleted",
         });
       }
-
-      // TODO: Make API call to create course
-      // const response = await fetch("/api/courses", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(courseData),
-      // });
-
-      // if (!response.ok) {
-      //   throw new Error("Failed to create course");
-      // }
-
-      // const result = await response.json();
-      // console.log("Course created successfully:", result);
-
-      // Reset form on success
       setFormData(
         formFields.reduce((acc, field) => ({ ...acc, [field.name]: "" }), {})
       );

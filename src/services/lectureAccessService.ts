@@ -3,7 +3,6 @@ import apiClient from "@/lib/apiClient";
 export const getLecturesAccess = async (lectureId: string): Promise<boolean> => {
   try {
     const { data } = await apiClient.get(`/lecturesProgress/video/${lectureId}`);
-    console.log('Lecture progress data:', data?.data);
     return data?.data?.status === 'completed';
   } catch (error: any) {
     console.error(`Failed to fetch lecture progress for ${lectureId}:`, error.message);
@@ -19,7 +18,6 @@ export const postLectureProgress = async (lectureId: string): Promise<any> => {
   try {
     // POST to mark lecture as completed
     const { data } = await apiClient.post(`/lecturesProgress/video/${lectureId}`);
-    console.log('Lecture marked as completed:', data);
     return data;
   } catch (error: any) {
     console.error(`Failed to update lecture progress for ${lectureId}:`, error.message);
@@ -30,7 +28,6 @@ export const postLectureProgress = async (lectureId: string): Promise<any> => {
 export const getAllLectureAccess = async (): Promise<any> => {
   try {
     const { data } = await apiClient.get("/lecturesProgress/video");
-    console.log('All lecture progress:', data);
     return data?.data;
   } catch (error: any) {
     return error?.message
