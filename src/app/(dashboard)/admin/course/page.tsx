@@ -1,15 +1,15 @@
-import dynamic from 'next/dynamic';
+import ManageCourse from "@/components/Course/ManageCourse";
 import { getCourses } from "@/services/courseService";
 
-const DynamicManageCourse = dynamic(
-  () => import("@/components/Course/ManageCourse"),
-  { ssr: false }
-);
-
 export default async function Course() {
-  const courses = await getCourses();
+  let courses = [];
 
-  return (
-    <DynamicManageCourse courses={courses} />
-  );
+  try {
+    courses = await getCourses();
+  } catch (error) {
+    console.error("Failed to fetch courses:", error);
+    // fallback empty array, page still renders
+  }
+
+  return <ManageCourse courses={courses} />;
 }
