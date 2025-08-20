@@ -1,10 +1,15 @@
-import ManageCourse from "@/components/Course/ManageCourse";
+import dynamic from 'next/dynamic';
 import { getCourses } from "@/services/courseService";
 
-export default async function  Course() {
-      const courses = await getCourses();
+const DynamicManageCourse = dynamic(
+  () => import("@/components/Course/ManageCourse"),
+  { ssr: false }
+);
+
+export default async function Course() {
+  const courses = await getCourses();
 
   return (
-   <ManageCourse courses={courses} />
-  )
+    <DynamicManageCourse courses={courses} />
+  );
 }
